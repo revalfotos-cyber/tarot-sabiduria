@@ -10,6 +10,31 @@
 </head>
 <body>
 
+    <!-- REPRODUCTOR MÍSTICO FLOTANTE (ESQUINA INFERIOR IZQUIERDA) -->
+    <div id="reproductor-musical" style="position: fixed !important; bottom: 25px !important; left: 25px !important; z-index: 9999 !important; display: flex !important; align-items: center !important; gap: 10px !important; background: rgba(12, 9, 20, 0.85) !important; padding: 10px 15px !important; border-radius: 30px !important; border: 1px solid rgba(255, 215, 0, 0.3) !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; backdrop-filter: blur(5px) !important;">
+        <button id="boton-musica" onclick="controlarMusica()" style="background: #ffd700 !important; color: #0c0914 !important; border: none !important; width: 35px !important; height: 35px !important; border-radius: 50% !important; font-size: 1.1rem !important; cursor: pointer !important; display: flex !important; justify-content: center !important; align-items: center !important; font-weight: bold !important; box-shadow: 0 2px 8px rgba(255,215,0,0.4) !important;">🎵</button>
+        <span id="texto-musica" style="color: #ffd700 !important; font-size: 0.85rem !important; font-family: 'Segoe UI', Arial, sans-serif !important; font-weight: bold !important; letter-spacing: 0.5px !important;">Música Mística</span>
+        <audio id="audio-fondo" loop src="https://mixkit.co"></audio>
+    </div>
+
+    <script>
+        function controlarMusica() {
+            var audio = document.getElementById('audio-fondo');
+            var boton = document.getElementById('boton-musica');
+            var texto = document.getElementById('texto-musica');
+            
+            if (audio.paused) {
+                audio.play();
+                boton.innerHTML = "⏸️";
+                texto.innerHTML = "Sonando...";
+            } else {
+                audio.pause();
+                boton.innerHTML = "🎵";
+                texto.innerHTML = "Música Mística";
+            }
+        }
+    </script>
+
     <header class="barra-superior" style="background: transparent !important; box-shadow: none !important; padding: 25px 15px !important; display: flex !important; justify-content: space-between !important; align-items: center !important; max-width: 1100px !important; margin: 0 auto !important; flex-wrap: wrap !important;">
         <div style="color: #ffd700 !important; font-size: 1.4rem !important; font-weight: bold !important; font-family: 'Segoe UI', Arial, sans-serif !important; text-align: left !important; line-height: 1.4 !important; letter-spacing: 1px !important; flex: 1 !important; min-width: 280px !important; margin: 10px !important;">
             ✨ Análisis Arquetípico y Transpersonal del Tarot de Marsella ✨
@@ -31,7 +56,6 @@
             </div>
         </section>
 
-        <!-- SECCIÓN DE BENEFICIOS TOTALMENTE REPARADA CON REVALFOTOS -->
         <section class="confianza" style="display: flex !important; justify-content: space-around !important; gap: 20px !important; flex-wrap: wrap !important; padding: 30px 15px !important;">
             <div style="flex: 1 !important; min-width: 250px !important; max-width: 320px !important; text-align: center !important; margin-bottom: 20px !important;">
                 <span class="icono-de-confianza" style="font-size: 2rem !important; display: block !important; margin-bottom: 8px !important;">🕒</span>
@@ -47,13 +71,11 @@
                 <span class="icono-de-confianza" style="font-size: 2rem !important; display: block !important; margin-bottom: 8px !important;">✨</span>
                 <b style="font-size: 1.2rem !important; color: #ffd700 !important; display: block !important; margin-bottom: 6px !important;">Material descargable</b>
                 <small style="font-size: 0.95rem !important; color: #c9bedc !important; line-height: 1.4 !important; display: block !important; margin-bottom: 15px !important;">Por la compra de este curso, solicita un 10% de descuento en la compra del ebook de este curso. Envía un correo directo a <strong>revalfotos@gmail.com</strong> adjuntando tu boleta de compra para recibir tu ticket de descuento.</small>
-                <!-- BOTÓN DORADO REVALFOTOS -->
-                <a href="mailto:revalfotos@://gmail.com" class="gold" style="display: inline-block !important; background-color: #ffd700 !important; color: #0c0914 !important; padding: 10px 20px !important; border-radius: 25px !important; text-decoration: none !important; font-weight: bold !important; font-size: 0.95rem !important; box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3) !important; margin-bottom: 10px !important;">Enviar correo desde mi cuenta →</a>
+                <a href="https://hotmart.com" class="gold" target="_blank" style="display: inline-block !important; background-color: #ffd700 !important; color: #0c0914 !important; padding: 10px 20px !important; border-radius: 25px !important; text-decoration: none !important; font-weight: bold !important; font-size: 0.95rem !important; box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3) !important; margin-bottom: 10px !important;">Enviar correo desde mi cuenta →</a>
                 <a href="https://hotmart.com" target="_blank" style="color: #ffd700 !important; text-decoration: underline !important; font-size: 0.9rem !important; font-weight: bold !important;">Adquirir eBook en Hotmart →</a>
             </div>
         </section>
 
-        <!-- SECCIÓN DE CURSOS -->
         <section class="seccion-de-cursos" id="cursos">
             <div class="encabezado-de-seccion">
                 <p class="ceja">TU PRÓXIMO PASO</p>
@@ -76,21 +98,3 @@
                 <p>Análisis del reino de los dioses y sus subdivisiones: la primera de ellas los grandes arquetipos y la segunda la etapa de inserción al mundo, madurez y proceso.</p>
                 <p style="color: #ffd700; font-size: 1.5rem; font-weight: bold; margin: 10px 0;">$39 USD</p>
                 <a href="https://hotmart.com" class="gold" target="_blank">Inscribirse en Hotmart →</a>
-            </div>
-
-            <!-- CURSO 3 -->
-            <div class="tarjeta-curso" style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 12px; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.1);">
-                <img src="Imagen curso 3.jpg" alt="Curso 3" style="width:100%; max-width:250px; border-radius: 8px; margin-bottom: 15px;">
-                <h3>Introducción al reino de la realidad terrestre y de la conciencia del Ego</h3>
-                <p>Análisis del reino de la realidad terrestre y de la conciencia del Ego y de sus subdivisiones: la primera de ellas las tareas de aceptación y reconocimiento, luego vienen las tareas del centro y por último las tareas de acción.</p>
-                <p style="color: #ffd700; font-size: 1.5rem; font-weight: bold; margin: 10px 0;">$39 USD</p>
-                <a href="https://hotmart.com" class="gold" target="_blank">Inscribirse en Hotmart →</a>
-            </div>
-
-            <!-- CURSO 4 -->
-            <div class="tarjeta-curso" style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 12px; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.1);">
-                <img src="Imagen curso 4.jpg" alt="Curso 4" style="width:100%; max-width:250px; border-radius: 8px; margin-bottom: 15px;">
-                <h3>Introducción al reino de los grandes desafíos y de la autorrealización</h3>
-                <p>Análisis del reino de los grandes desafíos y la autorrealización y de sus dos divisiones: la primera de ellas la etapa de los desafíos personales y la segunda de ellas la revelation del Sí-mismo.</p>
-                <p style="color: #ffd700; font-size: 1.5rem; font-weight: bold; margin: 10px 0;">$39 USD</p>
-         
